@@ -80,3 +80,63 @@ header {
   color: #838080;
   font-size: 20px;
 }
+.model{
+  display:none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  
+}
+.model-content{
+  position: relative;
+  margin: 5% auto;
+ max-width:800px;
+ 
+
+}
+#video-player{
+  width: 100%;
+  height: 450px;
+}
+#close-model{
+  position: absolute;
+  background-color: black;
+  color: white;
+  top: -10px;
+  right: -10px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0 10px;
+  cursor: pointer;
+}
+#download-mp3{
+  display: block;
+  margin: 20px auto;
+  background-color:#ce1312 ;
+  padding: 10px 20px;
+  color: #ccc;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#download-mp3:hover {
+  background-color: #cc1c13;
+}
+@media (max-width: 576px) {
+  .video-item {
+    width: 100%;
+  }
+
+  #video-player {
+    height: 200px;
+  }
+}
