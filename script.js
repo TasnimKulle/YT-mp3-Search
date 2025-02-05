@@ -783,4 +783,28 @@ function openModel(videoId){
     const videoUrl=`https://www.youtube.com/embed/${videoId}`;
     videoPlayer.src=videoUrl;
     model.style.display = "block"
+
+
+    document .querySelector("#download-mp3").addEventListener("click", async function(){
+        const url=`https://youtube-mp3-download1.p.rapidapi.com/dl?id=${videoId}`
+        const options={
+            method: "GET",
+            headers: {
+              'x-rapidapi-key': 'c52554a1d6mshca06cffbbef74a0p172932jsn29ccd0d52c71',
+		'x-rapidapi-host': 'youtube-mp3-download1.p.rapidapi.com'
+            },
+        }
+       try{
+        const reponse = await fetch(url,options);
+        const result = await reponse.json();
+        console.log(result)
+        if(result.status === "ok"){
+            window.location.href = result.link
+        }else{
+            alert("downloading fellied")
+        }
+       }catch(error){
+        console.error("error",error)
+       }
+    })
 }
