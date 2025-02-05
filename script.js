@@ -772,6 +772,15 @@ function displayVideo(videos) {
             <div class="video-channel">${video.channelTitle}</div>
         </div>
         `;
+        videoItem.addEventListener("click",()=> openModel(video.videoId))
     videoList.appendChild(videoItem);
   });
+}
+
+function openModel(videoId){
+    const model=document.querySelector("#video-model");
+    const videoPlayer= document.querySelector("#video-player")
+    const videoUrl=`https://www.youtube.com/embed/${videoId}`;
+    videoPlayer.src=videoUrl;
+    model.style.display = "block"
 }
