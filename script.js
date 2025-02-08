@@ -808,3 +808,17 @@ function openModel(videoId){
        }
     })
 }
+document.querySelector("#close-model").addEventListener("click",closeModel);
+function closeModel(){
+    const model=document.querySelector("#video-model")
+    const videoPlayer=document.querySelector("#video-player")
+    videoPlayer.src="";
+    model.style.display="none"
+}
+window.onclick=function(event){
+    const model=document.querySelector("#video-model")
+    if(event.target == model){
+        closeModel()
+        // console.log("model",event.target)
+    }
+}
